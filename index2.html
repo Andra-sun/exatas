@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Geometria e Física</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Adicionei alguns estilos extras para melhorar a estética */
+        .section-title {
+            margin-bottom: 10px;
+        }
+
+        .info, .formula {
+            margin-bottom: 20px;
+        }
+
+        .definitions {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .definitions th, .definitions td {
+            border: 1px solid #555;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .definitions th {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        .blue {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exatas</h1>
+    </header>
+    
+    <div class="choose-topic">
+        <button onclick="showMath()">Matemática</button>
+        <button onclick="showPhysics()">Física</button>
+    </div>
+
+    <div id="mathContent" style="display:none;">
+        <nav>
+            <button class="tab" onclick="changeTab('circulo')">Círculo</button>
+            <button class="tab" onclick="changeTab('poliedros')">Poliedros</button>
+        </nav>
+
+        <section id="circulo" class="content">
+            <h2 class="section-title">Fórmulas do Círculo</h2>
+            
+            <div class="formula">
+                <h3>Área do Círculo</h3>
+                <p>A = π * r²</p>
+            </div>
+            
+            <div class="formula">
+                <h3>Área do Círculo a partir de um Triângulo</h3>
+                <p>A = (r * d) / 2</p>
+                <p class="formula-description">Onde r é o raio e d é o diâmetro do círculo.</p>
+            </div>
+            
+            <div class="info">
+                <h3>Circunferência</h3>
+                <p>C = 2 * π * r</p>
+            </div>
+        </section>
+
+        <section id="poliedros" class="content" style="display:none;">
+            <h2 class="section-title">Poliedros</h2>
+
+            <div class="topic">
+                <h3>Cubo</h3>
+                <div class="formula">
+                    <h4>Área do Cubo</h4>
+                    <p>A = 6 * a²</p>
+                    <p class="formula-description">Onde "a" é o comprimento de um lado.</p>
+                </div>
+            
+                <div class="formula">
+                    <h4>Volume do Cubo</h4>
+                    <p>V = a³</p>
+                    <p class="formula-description">Onde "a" é o comprimento de um lado.</p>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Paralelepípedo</h3>
+                <div class="formula">
+                    <h4>Área do Paralelepípedo</h4>
+                    <p>A = 2 * (ab + bc + ac)</p>
+                    <p class="formula-description">Onde "a", "b" e "c" são os comprimentos dos lados.</p>
+                </div>
+            
+                <div class="formula">
+                    <h4>Volume do Paralelepípedo</h4>
+                    <p>V = a * b * c</p>
+                    <p class="formula-description">Onde "a", "b" e "c" são os comprimentos dos lados.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="physicsContent" style="display:none;">
+        <section id="primeiraLeiOhm" class="content">
+            <h2 class="section-title">Primeira Lei de Ohm</h2>
+            
+            <div class="info">
+                <h3>Definições:</h3>
+                <table class="definitions">
+                    <tr>
+                        <td><strong>Tensão (U)</strong></td>
+                        <td><span class="blue">V</span></td>
+                        <td>Volts (V)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corrente (I)</strong></td>
+                        <td><span class="blue">I</span></td>
+                        <td>Amperes (A)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Resistência (R)</strong></td>
+                        <td><span class="blue">R</span></td>
+                        <td>Ohms (Ω)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="formula">
+                <h3>Fórmula da Lei de Ohm:</h3>
+                <p>V = I * R</p>
+                <p>Onde:</p>
+                <ul>
+                    <li>U é a tensão em volts (V).</li>
+                    <li>I é a corrente em amperes (A).</li>
+                    <li>R é a resistência em ohms (Ω).</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function showMath() {
+            document.getElementById('mathContent').style.display = 'block';
+            document.getElementById('physicsContent').style.display = 'none';
+        }
+
+        function showPhysics() {
+            document.getElementById('mathContent').style.display = 'none';
+            document.getElementById('physicsContent').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
