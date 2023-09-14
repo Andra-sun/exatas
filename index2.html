@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exatas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Adicionei alguns estilos extras para melhorar a estética */
+        .section-title {
+            margin-bottom: 10px;
+        }
+
+        .info, .formula, .subtopic {
+            margin-bottom: 20px;
+        }
+
+        .definitions {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .definitions th, .definitions td {
+            border: 1px solid #555;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .definitions th {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        .blue {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exatas</h1>
+    </header>
+    
+    <div class="choose-topic">
+        <button onclick="showMath()">Matemática</button>
+        <button onclick="showPhysics()">Física</button>
+        <a href="biologia.html"><button>Biologia</button></a>
+    	<a href="quimica.html"><button>Química</button></a>
+    </div>
+
+    <div id="mathContent" style="display:none;">
+        <nav>
+            <button class="tab" onclick="changeTab('circulo')">Círculo</button>
+            <button class="tab" onclick="changeTab('poliedros')">Poliedros</button>
+        </nav>
+
+        <section id="circulo" class="content">
+            <h2 class="section-title">Fórmulas do Círculo</h2>
+            
+            <div class="formula">
+                <h3>Área do Círculo</h3>
+                <p>A = π * r²</p>
+            </div>
+            
+            <div class="formula">
+                <h3>Área do Círculo a partir de um Triângulo</h3>
+                <p>A = (r * d) / 2</p>
+                <p class="formula-description">Onde r é o raio e d é o diâmetro do círculo.</p>
+            </div>
+            
+            <div class="info">
+                <h3>Circunferência</h3>
+                <p>C = 2 * π * r</p>
+            </div>
+        </section>
+
+        <section id="poliedros" class="content" style="display:none;">
+            <h2 class="section-title">Poliedros</h2>
+
+            <div class="topic">
+                <h3>Cubo</h3>
+                <div class="formula">
+                    <h4>Área do Cubo</h4>
+                    <p>A = 6 * a²</p>
+                    <p class="formula-description">Onde "a" é o comprimento de um lado.</p>
+                </div>
+            
+                <div class="formula">
+                    <h4>Volume do Cubo</h4>
+                    <p>V = a³</p>
+                    <p class="formula-description">Onde "a" é o comprimento de um lado.</p>
+                </div>
+            </div>
+
+            <div class="topic">
+                <h3>Paralelepípedo</h3>
+                <div class="formula">
+                    <h4>Área do Paralelepípedo</h4>
+                    <p>A = 2 * (ab + bc + ac)</p>
+                    <p class="formula-description">Onde "a", "b" e "c" são os comprimentos dos lados.</p>
+                </div>
+            
+                <div class="formula">
+                    <h4>Volume do Paralelepípedo</h4>
+                    <p>V = a * b * c</p>
+                    <p class="formula-description">Onde "a", "b" e "c" são os comprimentos dos lados.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="physicsContent" style="display:none;">
+        <nav>
+            <button class="tab" onclick="changeTab('primeiraLeiOhm')">Primeira Lei de Ohm</button>
+            <button class="tab" onclick="changeTab('grandezas')">Tabela de Grandezas</button>
+            <button class="tab" onclick="changeTab('associacaoResistores')">Associação de Resistores</button>
+            <button class="tab" onclick="changeTab('imag')">Exemplos</button>
+        </nav>
+
+        <section id="primeiraLeiOhm" class="content" style="display:none;">
+            <h2 class="section-title">Primeira Lei de Ohm</h2>
+            
+            <div class="formula">
+                <h3>Fórmula da Lei de Ohm:</h3>
+                <p>U = I * R</p>
+                <p>Onde:</p>
+                <ul>
+                    <li>U é a tensão em volts (V).</li>
+                    <li>I é a corrente em amperes (A).</li>
+                    <li>R é a resistência em ohms (Ω).</li>
+                </ul>
+            </div>
+
+            <!-- Subtópico: Potência Elétrica (P) -->
+            <div class="subtopic">
+                <h3>Potência Elétrica (P)</h3>
+                <div class="formula">
+                    <h4>Fórmula da Potência Elétrica:</h4>
+                    <p>P = U * I</p>
+                    <p>Onde:</p>
+                    <ul>
+                        <li>P é a potência em watts (W).</li>
+                        <li>U é a tensão em volts (V).</li>
+                        <li>I é a corrente em amperes (A).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Subtópico: Potência Dissipada (Pd) -->
+            <div class="subtopic">
+                <h3>Potência Dissipada (Pd)</h3>
+                <div class="formula">
+                    <h4>Fórmula da Potência Dissipada:</h4>
+                    <p>Pd = I² * R</p>
+                    <p>Onde:</p>
+                    <ul>
+                        <li>Pd é a potência dissipada em watts (W).</li>
+                        <li>I é a corrente em amperes (A).</li>
+                        <li>R é a resistência em ohms (Ω).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="grandezas" class="content" style="display:none;">
+            <h2 class="section-title">Tabela de Grandezas</h2>
+            
+            <table class="definitions">
+                <tr>
+                    <th>Grandeza</th>
+                    <th>Símbolo</th>
+                    <th>Unidade SI</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>Tensão</td>
+                    <td><span class="blue">U</span></td>
+                    <td>Volts (V)</td>
+                    <td>A diferença de potencial elétrico entre dois pontos.</td>
+                </tr>
+                <tr>
+                    <td>Corrente</td>
+                    <td><span class="blue">I</span></td>
+                    <td>Amperes (A)</td>
+                    <td>O fluxo de cargas elétricas em um circuito.</td>
+                </tr>
+                <tr>
+                    <td>Resistência</td>
+                    <td><span class="blue">R</span></td>
+                    <td>Ohms (Ω)</td>
+                    <td>A oposição ao fluxo de corrente em um material.</td>
+                </tr>
+                <tr>
+					<td>Potência Elétrica</td>
+					<td><span class="blue">P</span></td>
+					<td>Watts (W)</td>
+					<td>A quantidade de energia consumida ou produzida por unidade de tempo.</td>
+				</tr>
+				<tr>
+					<td>Potência Dissipada</td>
+					<td><span class="blue">Pd</span></td>
+					<td>Watts (W)</td>
+					<td>A potência que é convertida em outras formas de energia, como calor, em um componente elétrico.</td>
+				</tr>
+				<tr>
+					<td>Resistencia equivalente</td>
+					<td><span class="blue">Req</span></td>
+					<td>Ohms (Ω)</td>
+					<td>...</td>
+				</tr>
+
+                <!-- Adicione mais linhas conforme necessário -->
+            </table>
+        </section>
+
+        <section id="associacaoResistores" class="content" style="display:none;">
+            <h2 class="section-title">Associação de Resistores</h2>
+            
+            <div class="info">
+                <h3>Série:</h3>
+                <p>A associação de resistores em série é quando eles são conectados um após o outro no mesmo caminho de corrente.</p>
+            </div>
+            
+            <div class="info">
+                <h3>Paralelo:</h3>
+                <p>A associação de resistores em paralelo é quando eles são conectados em extremidades opostas e ambos os lados são conectados em um único ponto.</p>
+            </div>
+
+            <div class="formula">
+                <h3>Fórmulas para Associação em Série:</h3>
+                <p>A resistência equivalente (Req) em uma associação de resistores em série é a soma das resistências individuais:</p>
+                <p>Req = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + ...+Rn</p>
+            </div>
+
+            <div class="formula">
+                <h3>Fórmulas para Associação em Paralelo:</h3>
+                <p>A resistência equivalente (Req) em uma associação de resistores em paralelo é dada por:</p>
+                <p>1/Req = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> + ...</p>
+            </div>
+        </section>
+        <section id="imag" class="content" style="display:none;">
+            <h2 class="section-title">Exemplos</h2>
+            <img src="data:image/png;base64,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" alt="imagem1">
+            <img src="data:image/png;base64,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" alt="imagem2"
+
+       </section>
+            
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script>
+        function showMath() {
+            document.getElementById('mathContent').style.display = 'block';
+            document.getElementById('physicsContent').style.display = 'none';
+        }
+
+        function showPhysics() {
+            document.getElementById('mathContent').style.display = 'none';
+            document.getElementById('physicsContent').style.display = 'block';
+        }
+
+        function changeTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
